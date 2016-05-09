@@ -5,8 +5,15 @@ php:
   - '5.6'
   - '7.0'
 
+env:
+  - NODE_VERSION='4.2'
+
 install:
-  - ./nodejs.sh;
+  - nvm install "$NODE_VERSION";
+  - nvm use "$NODE_VERSION"
+  - npm -g install npm
+  - npm -g update
+  - npm install
 
 script:
   - echo "hello";
